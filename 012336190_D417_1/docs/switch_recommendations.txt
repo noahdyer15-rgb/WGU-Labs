@@ -1,0 +1,17 @@
+Switch Recommendations for VLAN Deployment
+
+The VLAN deployment solution is implemented using EXOS switches located in Access Closet 1 within the N-CoreA-01 network.
+
+These switches are part of a segmented network design that includes the following VLANs:
+- user_Network
+- ACCT_Network
+- MGMT_Network
+- IT_Network
+
+Each VLAN corresponds to specific devices and network functions as shown in the network diagram.
+
+SSH access must be enabled on all EXOS switches prior to automation to allow Python (Netmiko) and Ansible to remotely configure the devices.
+
+Automation is performed from the Ansible_Desktop, which acts as the control node for both Python scripts and Ansible playbooks.
+
+This approach ensures scalable, consistent, and efficient deployment of VLAN configurations across all switches in Access Closet 1.
