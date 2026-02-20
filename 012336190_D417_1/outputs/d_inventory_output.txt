@@ -1,0 +1,2 @@
+[OK] Wrote INI inventory: inventory/switches.ini
+[OK] Group: [access_closet_1] | Hosts: 4

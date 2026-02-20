@@ -1,0 +1,52 @@
+switches:
+  - name: ACCT_Network
+    ip: 10.10.1.23
+    ram: "512 MB"
+    vcpus: "1"
+    qemu_binary: "/bin/qemu-system-x86_64 (v8.2.2)"
+    boot_priority: "CD/DVD-ROM or HDD"
+    on_close: "Power off the VM"
+    console_type: "telnet"
+    adapters: "13"
+    base_mac: "0c:c7:cf:b4:00:00"
+    nic_type: "Realtek 8139 Ethernet (rtl8139)"
+    replicate_link_state: "true"
+
+  - name: IT_Network
+    ip: 10.10.1.21
+    ram: "512 MB"
+    vcpus: "1"
+    qemu_binary: "/bin/qemu-system-x86_64 (v8.2.2)"
+    boot_priority: "CD/DVD-ROM or HDD"
+    on_close: "Power off the VM"
+    console_type: "telnet"
+    adapters: "13"
+    base_mac: "0c:a8:92:a4:00:00"
+    nic_type: "Realtek 8139 Ethernet (rtl8139)"
+    replicate_link_state: "true"
+
+  - name: MGMT_Network
+    ip: 10.10.1.22
+    ram: "512 MB"
+    vcpus: "1"
+    qemu_binary: "/bin/qemu-system-x86_64 (v8.2.2)"
+    boot_priority: "CD/DVD-ROM or HDD"
+    on_close: "Power off the VM"
+    console_type: "telnet"
+    adapters: "13"
+    base_mac: "0c:e4:9d:43:00:00"
+    nic_type: "Realtek 8139 Ethernet (rtl8139)"
+    replicate_link_state: "true"
+
+  - name: User_Network
+    ip: 10.10.1.24
+    ram: "512 MB"
+    vcpus: "1"
+    qemu_binary: "/bin/qemu-system-x86_64 (v8.2.2)"
+    boot_priority: "CD/DVD-ROM or HDD"
+    on_close: "Power off the VM"
+    console_type: "telnet"
+    adapters: "13"
+    base_mac: "0c:fd:94:c2:00:00"
+    nic_type: "Realtek 8139 Ethernet (rtl8139)"
+    replicate_link_state: "true"
