@@ -1,0 +1,29 @@
+Run time: 2026-02-21T05:49:12
+======================================================================
+ACCT_Network (10.10.1.23) - creating VLANs
+create vlan user_Network -> 
+create vlan ACCT_Network -> 
+create vlan MGMT_Network -> 
+create vlan IT_Network -> 
+[OK] Saved configuration
+======================================================================
+IT_Network (10.10.1.21) - creating VLANs
+create vlan user_Network -> 
+create vlan ACCT_Network -> 
+create vlan MGMT_Network -> 
+create vlan IT_Network -> 
+[OK] Saved configuration
+======================================================================
+MGMT_Network (10.10.1.22) - creating VLANs
+create vlan user_Network -> 
+create vlan ACCT_Network -> 
+create vlan MGMT_Network -> 
+create vlan IT_Network -> 
+[OK] Saved configuration
+======================================================================
+User_Network (10.10.1.24) - creating VLANs
+create vlan user_Network -> 
+create vlan ACCT_Network -> 
+create vlan MGMT_Network -> 
+create vlan IT_Network -> 
+[OK] Saved configuration
