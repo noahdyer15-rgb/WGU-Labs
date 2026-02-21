@@ -1,0 +1,11 @@
+stages:
+  - test
+
+python_syntax_check:
+  image: python:3.11
+  stage: test
+  before_script:
+    - pip install -U pip
+    - pip install netmiko pyyaml
+  script:
+    - python -m py_compile scripts/*.py
