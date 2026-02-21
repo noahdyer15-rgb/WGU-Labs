@@ -1,0 +1,20 @@
+---
+- name: Create Local-Admin user on Access Closet 1 EXOS switches
+  hosts: AccessCloset1_EXOS
+  gather_facts: no
+
+  tasks:
+    - name: Create Local-Admin account
+      exos_config:
+        lines:
+          - create account admin Local-Admin WGU123
+
+    - name: Set Local-Admin privilege (RW equivalent)
+      exos_config:
+        lines:
+          - configure account Local-Admin privilege administrator
+
+    - name: Save configuration
+      exos_config:
+        lines:
+          - save

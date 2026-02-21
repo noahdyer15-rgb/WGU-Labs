@@ -1,0 +1,30 @@
+
+PLAY [Create Local-Admin user on Access Closet 1 EXOS switches] ****************
+
+TASK [Create Local-Admin account (RW-equivalent)] ******************************
+changed: [10.10.1.23]
+changed: [10.10.1.24]
+changed: [10.10.1.21]
+changed: [10.10.1.22]
+
+TASK [Save configuration (may take >30 seconds)] *******************************
+[ERROR]: Task failed: Action failed: command timeout triggered, timeout value is 300 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+Origin: /root/d417-network-automation-and-deployment/012336190_D417_1/ansible/f_create_local_admin_fixed.yml:15:7
+
+13           - create account admin Local-Admin WGU123
+14
+15     - name: Save configuration (may take >30 seconds)
+         ^ column 7
+
+fatal: [10.10.1.24]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 300 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [10.10.1.23]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 300 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [10.10.1.21]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 300 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [10.10.1.22]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 300 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+
+PLAY RECAP *********************************************************************
+10.10.1.21                 : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+10.10.1.22                 : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+10.10.1.23                 : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+10.10.1.24                 : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

@@ -1,0 +1,23 @@
+---
+- name: Create Local-Admin user on Access Closet 1 EXOS switches
+  hosts: AccessCloset1_EXOS
+  gather_facts: no
+
+  vars:
+    ansible_command_timeout: 120
+
+  tasks:
+    - name: Create Local-Admin account (RW-equivalent)
+      community.network.exos_config:
+        lines:
+          - create account admin Local-Admin WGU123
+
+    - name: Verify account exists (read-only)
+      community.network.exos_command:
+        commands:
+          - show account
+      register: acct_out
+
+    - name: Print verification output
+      debug:
+        var: acct_out.stdout_lines

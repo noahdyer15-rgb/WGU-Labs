@@ -1,0 +1,11 @@
+AccessCloset1_EXOS:
+  hosts:
+    10.10.1.21:
+    10.10.1.22:
+    10.10.1.23:
+    10.10.1.24:
+  vars:
+    ansible_user: admin
+    ansible_connection: ansible.netcommon.network_cli
+    ansible_network_os: exos
+    ansible_ssh_private_key_file: /root/.ssh/id_rsa
