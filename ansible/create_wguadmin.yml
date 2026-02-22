@@ -1,0 +1,32 @@
+---
+- name: Create AdminWGU with Root access on each server
+  hosts: all
+  become: true
+  gather_facts: true
+
+  vars:
+    new_user: "AdminWGU"
+    new_pass_hash: "$6$QdbuYBNEi/jc5f22$xCWUWNBDjkPbHxWxxZjAzH629dEFnqMmmZKz2k.k3RGrjNtKFrbqlaO3pjMYz.bDN2NGy2NESdE3U959hsa13/"
+
+  tasks:
+    - name: Create local user
+      ansible.builtin.user:
+        name: "{{ new_user }}"
+        password: "{{ new_pass_hash }}"
+        shell: /bin/bash
+        create_home: true
+        state: present
+
+    - name: Add user to sudo group (Ubuntu)
+      ansible.builtin.user:
+        name: "{{ new_user }}"
+        groups: sudo
+        append: true
+      when: ansible_os_family == "Debian"
+
+    - name: Add user to wheel group (RHEL)
+      ansible.builtin.user:
+        name: "{{ new_user }}"
+        groups: wheel
+        append: true
+      when: ansible_os_family == "RedHat"
